@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.List;
 
 public class ParsedExpressionTest {
@@ -7,9 +8,9 @@ public class ParsedExpressionTest {
     public void testParsering() throws Exception {
     String example = "31+5";
         parsedExpression.parse(example);
-        List<Double> operands = parsedExpression.getOperands();
+        List<BigDecimal> operands = parsedExpression.getOperands();
         char operator = parsedExpression.getOperator();
-        for (Double operand : operands) {
+        for (BigDecimal operand : operands) {
             System.out.println("operand " + operand);
         }
         System.out.println("operator " + operator);

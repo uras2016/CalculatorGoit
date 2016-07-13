@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.List;
 
 public class Calculator {
@@ -17,9 +18,9 @@ public class Calculator {
     }
 
 
-    public double calculate(String expression){
+    public BigDecimal calculate(String expression){
         boolean operatorFound = false;
-        double result = 0;
+        BigDecimal result = BigDecimal.valueOf(0);
         parser.parse(expression);
 
         for (Operation operation : operationsSet) {

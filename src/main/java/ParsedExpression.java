@@ -1,14 +1,19 @@
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ParsedExpression implements Parser {
 
-    public List<Double> operands;
+    public List<BigDecimal> operands;
     public char operator;
 
 
     public void parse(String expression) {
-
+        BigDecimal bigDecimal;
+        DecimalFormat decimalFormat = new DecimalFormat();
+        decimalFormat.setParseBigDecimal(true);
         operands = new ArrayList<>();
         String temp = "";
         for (char c : expression.toCharArray()) {
@@ -19,21 +24,27 @@ public class ParsedExpression implements Parser {
             }else {
                 operator = c;
                 try {
-                    operands.add(Double.parseDouble(temp));
+                    operands.add((BigDecimal) decimalFormat.parse(temp));
                 }catch (NumberFormatException e){
                     System.out.println("wrong expression");
+                } catch (ParseException e) {
+                    e.printStackTrace();
                 }
 
                 temp="";
             }
         }
 
-        operands.add(Double.parseDouble(temp));
+        try {
+            operands.add((BigDecimal) decimalFormat.parse(temp));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
 
     @Override
-    public List<Double> getOperands() {
+    public List<BigDecimal> getOperands() {
         return operands;
     }
 

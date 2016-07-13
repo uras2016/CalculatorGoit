@@ -1,5 +1,7 @@
+import java.math.BigDecimal;
+
 public interface Operation {
 
-    public double count(double number1, double number2);
+    public BigDecimal count(BigDecimal number1, BigDecimal number2);
     char getOperator();
 }

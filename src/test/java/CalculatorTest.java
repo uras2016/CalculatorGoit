@@ -6,9 +6,9 @@ public class CalculatorTest {
     public void testCalculate() throws Exception {
         Provider provider = new Provider();
         Parser parser = new ParsedExpression();
-        double result = 0;
-        String a = "3+5";
         Calculator calculator = new Calculator();
+        double result = 0;
+        String a = "1531351035130-5";
         provider.init();
         calculator.setOperationsSet(provider.getOperations());
         calculator.setParser(parser);

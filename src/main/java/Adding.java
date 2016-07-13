@@ -1,7 +1,10 @@
+import java.math.BigDecimal;
+
 public class Adding implements Operation {
     @Override
-    public double count(double number1, double number2) {
-        return number1+number2;
+    public BigDecimal count(BigDecimal number1, BigDecimal number2) {
+
+        return number1.add(number2);
     }
 
     @Override
