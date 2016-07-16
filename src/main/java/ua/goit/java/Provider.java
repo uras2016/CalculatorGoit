@@ -7,7 +7,7 @@ public class Provider implements OperationProvider {
     public List<Operation> operations = new ArrayList<>();
 
     @Override
-    public List<Operation> getOperations() {
+    public List<Operation> getAllOperations() {
         return operations;
     }
 
@@ -16,5 +16,9 @@ public class Provider implements OperationProvider {
         operations.add(new Adding());
         operations.add(new Subtraction());
 
+    }
+
+    public void initAdditionalOperation(Operation operation){
+        operations.add(operation);
     }
 }
