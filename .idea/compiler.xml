@@ -24,9 +24,17 @@
         <processorPath useClasspath="true" />
         <module name="Calculator" />
       </profile>
+      <profile default="false" name="Annotation profile for CalculatorLib" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="CalculatorLib" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Calculator" target="1.8" />
+      <module name="CalculatorLib" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

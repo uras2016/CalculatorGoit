@@ -1,4 +1,8 @@
 import org.junit.Test;
+import ua.goit.java.Calculator;
+import ua.goit.java.ParsedExpression;
+import ua.goit.java.Parser;
+import ua.goit.java.Provider;
 
 public class CalculatorTest {
 
@@ -6,7 +10,7 @@ public class CalculatorTest {
     public void testCalculate() throws Exception {
         Provider provider = new Provider();
         Parser parser = new ParsedExpression();
-        Calculator calculator = new Calculator();
+        ua.goit.java.Calculator calculator = new Calculator();
         double result = 0;
         String a = "1531351035130-5";
         provider.init();

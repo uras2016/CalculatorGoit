@@ -1,3 +1,5 @@
+package ua.goit.java;
+
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.ParseException;
@@ -8,6 +10,7 @@ public class ParsedExpression implements Parser {
 
     public List<BigDecimal> operands;
     public char operator;
+
 
 
     public void parse(String expression) {
